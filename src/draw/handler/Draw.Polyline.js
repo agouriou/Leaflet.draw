@@ -94,15 +94,16 @@ L.Draw.Polyline = L.Draw.Feature.extend({
 				.addTo(this._map);
 
                         //FIX for touch on IE11 and some browsers on windows
-			if (L.Browser.touch) { // #TODO: get rid of this once leaflet fixes their click/touch.
+			/*if (L.Browser.touch) { // #TODO: get rid of this once leaflet fixes their click/touch.
 				this._map
 				  .on('click', this._onTouch, this);
 		        } else {
 				this._map
 				  .on('mouseup', this._onMouseUp, this); // Necessary for 0.7 compatibility
-			}
+			}*/
 
 			this._map
+				.on('mouseup', this._onMouseUp, this)
 				.on('mousemove', this._onMouseMove, this)
 				.on('zoomlevelschange', this._onZoomEnd, this)
 				.on('zoomend', this._onZoomEnd, this);
