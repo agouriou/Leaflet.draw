@@ -21,6 +21,7 @@
   },
   "scripts": {
     "build": "jake",
+    "build-only": "jake build",
     "test": "jake test"
   },
   "repository": {
